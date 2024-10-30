@@ -1,0 +1,78 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block head_title %}Home - {{ block.super }}{% endblock head_title %}
+{% block head_extra %}{% endblock head_extra %}
+
+{% block content %}
+<!-- ***** Main Banner Area Start ***** -->
+{% include "core/banner.html" %}
+<!-- ***** Main Banner Area End ***** -->
+
+<section class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-12 mx-auto">
+          <div class="features-post">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-pencil"></i>All Courses</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section courses">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Choose Your Course</h2>
+          </div>
+        </div>
+
+        <div id="department" class="card h-75 mb-3 mt-5 p-2 shadow" style="border-top: 6px solid #c0cfd0;">
+          <div id="department-container" class="row d-flex flex-wrap ms-3 my-2" style="font-weight: 500;">
+            <div class="form-check col-3">
+              <input 
+              class="form-check-input" 
+              type="radio" 
+              name="department"
+              id="dept-all"
+              data-slug=""
+              />
+              <label class="form-check-label" for="dept-all">
+              All Course
+              </label>
+          </div>
+            
+          </div>
+        </div>
+
+        <h2 id="total_course" class="card bg-transparent text-white ms-3 my-5 p-2 w-50 border-5 border-top-0 border-end-0 border-bottom-0 border-warning"></h2>
+
+        <div id="course-container" class="row d-flex flex-wrap justify-content-center gap-4 my-2">
+          
+          
+          
+        </div>
+        
+      </div>
+    </div>
+  </section>
+    
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/course.js' %}"></script>
+<script>
+  // Get the video element
+  var video = document.getElementById('bg-video');
+
+  // Set the video playback speed (e.g., 0.5 for half speed)
+  video.playbackRate = 0.40; 
+</script>
+{% endblock script %}

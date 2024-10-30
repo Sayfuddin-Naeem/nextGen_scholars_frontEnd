@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>{% block head_title %}NextGen Scholars{% endblock head_title %}</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="/static/js/accessControl.js"></script>
+
+    {% block head_extra %}{% endblock head_extra %}
+
+  </head>
+
+<body>
+
+  <!-- alert box -->
+  <div id="custom-toast" class="toast position-fixed p-3" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header" id="toast-header">
+      <strong class="me-auto">Notification</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body fs-6" id="toast-message">
+      <!-- Dynamic message will appear here -->
+    </div>
+  </div>  
+
+
+   
+  <!--header-->
+
+  {% include "core/header.html" %}
+
+  <!-- header end -->
+
+  {% block content %}
+    
+  {% endblock content %}
+
+  <!-- footer start -->
+
+  {% include "core/footer.html" %}
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    {% comment %} <script src="{% static 'js/video.js' %}"></script> {% endcomment %}
+    <script src="{% static 'js/custom.js' %}"></script>
+    {% block script %}
+    {% endblock script %}
+</body>
+</html>

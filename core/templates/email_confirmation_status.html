@@ -1,0 +1,37 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block head_title %}Home - {{ block.super }}{% endblock head_title %}
+{% block head_extra %}{% endblock head_extra %}
+
+{% block content %}
+
+<section class="section confirmation-status">
+    <div id="spinner" class="spinner-border" role="status" style="display:none;">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div id="status-success" class="status-success d-none card d-flex flex-column align-items-center w-75 mx-auto p-5">
+        <img src="{% static 'images/success-icon.png' %}" alt="">
+        <h2 class="my-3">Email Confirmed Successfully!</h2>
+        <p class="fs-5 text-center w-75 mx-auto">
+            <span id="email_link" class="text-success">Congratulations!</span> Your email address has been successfully confirmed. You can now log in to your account and start using all the features we offer.
+        </p>
+        <a href="{% url 'login' %}" class="btn custom-btn">Go to Login</a>
+    </div>
+    
+    <div id="status-fail" class="status-fail d-none card d-flex flex-column align-items-center w-75 mx-auto p-5">
+        <img src="{% static 'images/failure-icon.png' %}" alt="">
+        <h2 class="my-3">Email Confirmation Failed</h2>
+        <p class="fs-5 text-center w-75 mx-auto">
+            <span id="email_link" class="text-danger">We’re sorry!</span>, but we were unable to confirm your email address. This could be due to an expired or incorrect activation link.
+        </p>
+        <a href="{% url 'register' %}" class="btn btn-danger">Register Again</a>
+    </div>
+
+</section>
+    
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/activate.js' %}"></script>
+{% endblock script %}

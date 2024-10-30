@@ -1,0 +1,50 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block head_title %}Home - {{ block.super }}{% endblock head_title %}
+{% block head_extra %}{% endblock head_extra %}
+
+{% block content %}
+<section class="section why-us"> <!--  data-section="section2" -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Why choose <span style="color: #93FFE8;">NextGen Scholars</span>?</h2>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div id='tabs'>
+            <section class='tabs-content'>
+              <article id='tabs-1'>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p style="text-align: justify;">
+                      At <span style="color: #93FFE8;">NextGen Scholars</span>, we are passionate about making quality education accessible to everyone, no matter where they are. Our online school is designed to empower students with the knowledge, skills, and confidence they need to succeed in today’s dynamic world.
+                      
+                      We offer a wide range of courses across different fields, taught by experienced educators who are experts in their respective domains. Our curriculum focuses on interactive and engaging learning experiences that combine traditional education principles with modern technologies. Whether you are looking to enhance your current skills or explore a new subject, <span style="color: #93FFE8;">NextGen Scholars</span> has the resources and support to guide you through your educational journey.
+                      
+                      Mission: To create a collaborative, inclusive, and innovative learning environment that nurtures students to achieve their academic and professional goals.
+                      
+                      Vision: To be a global leader in online education by delivering high-quality, flexible, and accessible learning solutions for students worldwide.
+                      
+                      Our Values:
+                      
+                      Excellence: Striving for the highest standards in education.
+                      Innovation: Leveraging technology to enhance learning experiences.
+                      Inclusivity: Providing equal opportunities for all students to learn and grow.
+                      Community: Building a supportive and collaborative learning environment.
+                      Join us at <span style="color: #93FFE8;">NextGen Scholars</span>, where your future starts today. Let’s learn, grow, and succeed together!</p>
+                  </div>
+                  <div class="col-md-6">
+                    <img src="{% static 'images/choose-us-image-01.png' %}" alt="" style="height: 600px; width: 600px;">
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

@@ -1,0 +1,128 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block head_title %}Home - {{ block.super }}{% endblock head_title %}
+{% block head_extra %}{% endblock head_extra %}
+
+{% block content %}
+
+<section class="section register">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="right-content">
+            <div class="top-content">
+              <h6>Update Your Profile</h6>
+            </div>
+            <form id="update_profile" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <a href="{% url 'change_password' %}" class="btn custom-btn position-relative end-0 text-white mb-3" style="width: 30%;">Change Password</a>
+              <div id="rgTab1">
+                <div class="row">
+                  <span class="d-flex text-white">*</span>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input name="first_name" type="text" class="form-control" id="first_name" placeholder="First Name" required="">
+                    </fieldset>
+                  </div>
+                  <span class="d-flex text-white">*</span>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input name="last_name" type="text" class="form-control" id="last_name" placeholder="Last Name" required="">
+                    </fieldset>
+                  </div>
+                  <span class="d-flex text-white">*</span>
+                  <div class="col-md-12">
+                      <fieldset class="form-floating-file">
+                        <input name="date_of_birth" type="date" class="form-control" id="dob" required="">
+                        <label for="dob">Date of Birth</label>
+                      </fieldset>
+                    </div>
+                  <span class="d-flex text-white">*</span>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input name="email" type="email" class="form-control" id="email" placeholder="Email" required="">
+                    </fieldset>
+                  </div>
+                  <span class="d-flex text-white">*</span>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input name="phone_number" type="text" class="form-control" id="phone" placeholder="Phone Number" required="">
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+              <div id="rgTab2" class="d-none mx-0">
+                <div class="col-md-12">
+                  <fieldset class="d-flex my-2">
+                    <button type="button" id="as_student" class="active_user">As Student</button>
+                    <button type="button" id="as_teacher" class="">As Teacher</button>
+                  </fieldset>
+                </div>
+                <span class="d-flex text-white">*</span>
+                <div class="col-md-12">
+                  <fieldset class="form-floating-select mb-3">
+                    <select class="form-select" id="department" name="department" required="" aria-label="Floating label select" style="height: 50px">
+                      <option class="bg-secondary" value="" selected>-- Select --</option>
+                      <option class="bg-secondary" value="apple">Apple</option>
+                      <option class="bg-secondary" value="banana">Banana</option>
+                    </select>
+                    <label for="department">Department</label>
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset class="form-floating-file mb-3">
+                    <input name="profile_picture" type="file" class="form-control ps-4" id="profile_picture" placeholder="Choose an image" style="height: 60px">
+                    <label for="profile_picture">Profile Picture</label>
+                  </fieldset>
+                </div>
+                <!-- Student info start -->
+                <div id="student-info">
+                <span class="d-flex text-white">*</span>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input name="year_of_study" type="number" class="form-control" id="year_of_study" placeholder="Year of study" required="">
+                    </fieldset>
+                  </div>
+                </div>
+                <!-- Teacher info start-->
+                <div id="teacher-info" class="d-none">
+                  <span class="d-flex text-white">*</span>
+                  <div class="col-md-12">
+                    <fieldset class="form-floating-select mb-3">
+                      <select class="form-select" id="specializations" name="specializations" aria-label="Floating label select" required="" multiple style="height: 100px">
+                        <option value="apple">Apple</option>
+                        <option value="banana">Banana</option>
+                      </select>
+                      <label for="specializations">Specializations</label>
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <textarea class="form-control" placeholder="Write about yourself" name="bio" id="bio" style="height: 200px"></textarea>
+                    </fieldset>
+                  </div>
+                </div>
+                <!-- Teacher info end-->
+                <input name="user_id" type="hidden" value="" id="user_id" >
+                <input name="userType" type="hidden" value="student" id="user_type_value" >
+              </div>
+              <!-- User info end-->
+              <div class="col-md-12">
+                <fieldset class="d-flex justify-content-end my-2">
+                  <button type="button" id="nextPrev" class="rounded">Next</button>
+                  <button type="submit" id="form-submit" class="d-none ms-2 rounded">Update</button>
+                </fieldset>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/register.js' %}"></script>
+{% endblock script %}

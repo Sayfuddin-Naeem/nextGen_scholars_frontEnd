@@ -1,0 +1,24 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block head_title %}Home - {{ block.super }}{% endblock head_title %}
+{% block head_extra %}{% endblock head_extra %}
+
+{% block content %}
+
+<section class="section confirm-email">
+    <div class="card d-flex flex-column align-items-center w-75 mx-auto p-5">
+        <img src="{% static 'images/email.png' %}" alt="">
+        <h1 class="my-3">Email Confirmation</h1>
+        <p class="fs-5 text-center w-75 mx-auto">
+            We have sent email to <span id="email_link" class="text-success"></span> to confirm the validity of your email address. After receiving the email follow the link provided to complete your registration.
+        </p>
+    </div>
+
+</section>
+    
+{% endblock content %}
+
+{% block script %}
+{% comment %} <script src="{% static 'js/login.js' %}"></script> {% endcomment %}
+{% endblock script %}

@@ -1,0 +1,26 @@
+<header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="/"><em>NextGen</em> Scholars</a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul id="main-menu" class="main-menu">
+
+        <!-- Shown for only teacher -->
+        <li><a href="{% url 'add_course' %}" class="menu-item menu-item-n" id="menu-add_course">Add Course</a></li>
+        
+        <!-- Shown for guest users -->
+        <li><a href="{% url 'register' %}" class="menu-item menu-item-n" id="menu-register">Register</a></li>
+        <li><a href="{% url 'login' %}" class="menu-item menu-item-n" id="menu-login">Login</a></li>
+
+        <!-- Always visible -->
+        <li><a href="{% url 'about_us' %}" class="menu-item menu-item-l" id="menu-about_us">About Us</a></li>
+        <li><a href="{% url 'contact_us' %}" class="menu-item menu-item-l" id="menu-contact">Contact</a></li>
+
+        <!-- Shown for logged-in users -->
+        <li><a href="{% url 'profile' %}" class="menu-item menu-item-n" id="menu-profile">Profile</a></li>
+        <li><a href="#" class="menu-item menu-item-n" id="menu-logout">Logout</a></li>
+
+      </ul>
+    </nav>
+  </header>

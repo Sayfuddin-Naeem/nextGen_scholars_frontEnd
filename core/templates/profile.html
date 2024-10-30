@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block head_title %}Profile - {{ block.super }}{% endblock head_title %}
+{% block head_extra %}{% endblock head_extra %}
+
+{% block content %}
+    <section class="section profile">
+        <div class="content text-white">
+            <div class="profile-picture d-flex flex-column gap-4">
+                <img class="mt-4 ms-4" src="{% static 'images/default_profile.jpg' %}" alt="">
+            <a href="{% url 'update_profile' %}" class="btn custom-btn position-relative end-0 text-white mb-3" style="width: 20%;">Update Profile</a>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

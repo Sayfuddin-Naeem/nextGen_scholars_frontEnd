@@ -1,0 +1,66 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block head_title %}Home - {{ block.super }}{% endblock head_title %}
+{% block head_extra %}{% endblock head_extra %}
+
+{% block content %}
+
+<section class="section register">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 mx-auto">
+          <div class="right-content">
+            <div class="top-content">
+              <h6>Add Course</h6>
+            </div>
+            <form id="add_course" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+                <div class="row">
+                  <span class="d-flex text-white">*</span>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input name="title" type="text" class="form-control" id="title" placeholder="Course Name" required="">
+                    </fieldset>
+                  </div>
+                  <span class="d-flex text-white">*</span>
+                  <div class="col-md-12">
+                    <fieldset class="form-floating-select mb-3">
+                        <select class="form-select" id="department" name="department" required="" aria-label="Floating label select" style="height: 50px">
+                        <option class="bg-secondary" value="" selected>-- Select --</option>
+                        <option class="bg-secondary" value="apple">Apple</option>
+                        <option class="bg-secondary" value="banana">Banana</option>
+                        </select>
+                        <label for="department">Department</label>
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset class="form-floating-file mb-3">
+                      <input name="course_image" type="file" class="form-control ps-4" id="course_image" placeholder="Choose an image" style="height: 60px">
+                      <label for="course_image">Course Photo</label>
+                    </fieldset>
+                  </div>
+                  <span class="d-flex text-white">*</span>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <textarea class="form-control" placeholder="Write About Course" id="description" name="description" style="height: 200px" required=""></textarea>
+                    </fieldset>
+                  </div>
+              <!-- User info end-->
+              <div class="col-md-12">
+                <fieldset class="d-flex flex-row-reverse me-2 my-2">
+                  <button type="submit" id="form-submit" class="rounded">Add Course</button>
+                </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/login.js' %}"></script>
+{% endblock script %}

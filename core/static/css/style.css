@@ -210,8 +210,8 @@ a.menu-link { display: none; }
 
 .main-menu li a:hover,
 .main-menu li a.activeMenu{
-  position: relative;
-  bottom: 8px;
+  position: relative !important;
+  bottom: 8px !important;
   border-bottom: 4px solid #b0f6c1 !important;
   border-radius: 10px !important;
   color: #f8fefe !important;
@@ -782,7 +782,7 @@ section.courses {
     padding: 0px 30px 100px 30px;
 }
 
-#department{
+#department-filter{
   background-color: #202e4c !important;
   color: white !important;
 }

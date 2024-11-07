@@ -86,9 +86,10 @@ const user_creation = async (userTypeInput) => {
             window.location.href = '/user/confirm_email'; // Redirect on success
         } else {
             showAlert(`Error: ${result.message || 'Registration failed'}`, 'error');
+            console.log(result.message);
         }
     } catch (error) {
-        console.error('Error:', error);
+        //console.error('Error:', error);
         showAlert('An error occurred during registration. Please try again later.', 'error');
     }
 };

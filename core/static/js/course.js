@@ -1,7 +1,7 @@
 
 const all_department = ()=>{
     // Define the URL for the department API
-const departmentUrl = 'https://nextgen-scholars.onrender.com/department/';
+const departmentUrl = `${apiRootLink}/department/`;
 
 // Fetch department data
 fetch(departmentUrl)
@@ -57,9 +57,9 @@ const displayDepartment = (data)=>{
 
 const get_course = (dept_slug = null)=>{
     // Define the URL for the department wise course API
-    let courseUrl = `https://nextgen-scholars.onrender.com/course/?dept_slug=${dept_slug}`;
+    let courseUrl = `${apiRootLink}/course/?dept_slug=${dept_slug}`;
     if (dept_slug == null) {
-        courseUrl = 'https://nextgen-scholars.onrender.com/course/';
+        courseUrl = `${apiRootLink}/course/`;
     }
 
     // Fetch department wise course data

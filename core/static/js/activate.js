@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (uid64 && token) {
         spinner.style.display = 'block';
-        fetch(`https://nextgen-scholars.onrender.com/user/activate/${uid64}/${token}/`, {
+        fetch(`${apiRootLink}/user/activate/${uid64}/${token}/`, {
             method: 'GET',
         })
         .then(response => response.json())

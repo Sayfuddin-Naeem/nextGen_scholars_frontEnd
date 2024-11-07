@@ -40,7 +40,7 @@ const user_login = async () => {
     
                 // Redirect based on user role
                 if (result.redirect_url) {
-                    // Redirect to admin panel if applicable
+                    // Redirect to admin
                     window.location.href = result.redirect_url;
                 } else {
                     // Redirect to user profile for non-admin users

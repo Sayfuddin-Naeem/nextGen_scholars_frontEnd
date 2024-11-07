@@ -29,39 +29,31 @@ const showAlert = (message, type = 'success') => {
     toast.show();
 };
 
-// Get all the menu items (adjust the selector if needed)
+// Get all the menu items
 const addActiveClass_to_navLink = ()=> {
-	const menuItem1 = document.getElementById("menu-item1");
-	const menuItem2 = document.getElementById("menu-item2");
-	const menuItem3 = document.getElementById("menu-item3");
-	const menuItem4 = document.getElementById("menu-item4");
-	const menuItem5 = document.getElementById("menu-item5");
-
-	// Add active class funtion for use onclick
-	const add_class_to_navLink = (element)=> {
-		menuItem1.classList.remove("activeMenu");
-		menuItem2.classList.remove("activeMenu");
-		menuItem3.classList.remove("activeMenu");
-		menuItem4.classList.remove("activeMenu");
-		menuItem5.classList.remove("activeMenu");
-
-		element.classList.add("activeMenu");
-	};
-
-	// Add activeMenu class first element by defualt
-	menuItem1.classList.add("activeMenu");
-
-	// add onclick listner
-	menuItem1.onclick = ()=>{add_class_to_navLink(menuItem1);};
-	menuItem2.onclick = ()=>{add_class_to_navLink(menuItem2);};
-	menuItem3.onclick = ()=>{add_class_to_navLink(menuItem3);};
-	menuItem4.onclick = ()=>{add_class_to_navLink(menuItem4);};
-	menuItem5.onclick = ()=>{add_class_to_navLink(menuItem5);};
+	 // Add active class to menu items based on current URL
+     const menuItems = document.querySelectorAll(".main-menu li a");
+     const currentUrl = window.location.href;
+ 
+     menuItems.forEach(item => {
+         item.classList.remove("activeMenu"); // Clear any existing active classes
+ 
+         if (item.href === currentUrl) {
+             // Add 'activeMenu' if the link matches the current URL
+             item.classList.add("activeMenu");
+         }
+ 
+         // Add click event to handle single-page applications
+         item.addEventListener("click", ()=> {
+             menuItems.forEach(link => link.classList.remove("activeMenu"));
+             this.classList.add("activeMenu");
+         });
+     });
 	
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    //addActiveClass_to_navLink();
+    addActiveClass_to_navLink();
     // Get the login status from localStorage
     const loggedIn = localStorage.getItem('loggedIn');
     console.log(loggedIn);

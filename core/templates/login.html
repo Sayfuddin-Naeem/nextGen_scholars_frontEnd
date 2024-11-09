@@ -14,7 +14,7 @@
                   <div class="top-content">
                       <h6>Log In</h6>
                   </div>
-                  <form id="login" action="" method="post">
+                  <form id="login" action="{% url 'login' %}" method="post">
                       {% csrf_token %}
                       <div class="row">
                         <span class="d-flex text-white">*</span>
@@ -46,6 +46,6 @@
 {% endblock content %}
 
 {% block script %}
-<script src="{% static 'js/register.js' %}"></script>
+{% comment %} <script src="{% static 'js/register.js' %}"></script> {% endcomment %}
 <script src="{% static 'js/login.js' %}"></script>
 {% endblock script %}

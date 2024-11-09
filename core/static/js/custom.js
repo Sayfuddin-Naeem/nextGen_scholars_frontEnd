@@ -46,7 +46,7 @@ const addActiveClass_to_navLink = ()=> {
          // Add click event to handle single-page applications
          item.addEventListener("click", ()=> {
              menuItems.forEach(link => link.classList.remove("activeMenu"));
-             this.classList.add("activeMenu");
+             item.classList.add("activeMenu");
          });
      });
 	
